@@ -5,13 +5,11 @@ import com.xiaowu.elasticsearch_7_demo.service.ElasticsearchService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Iterator;
 
 /**
  * @ClassName: ElasticController
@@ -29,7 +27,14 @@ public class ElasticController {
     ElasticsearchService elasticsearchService;
 
     @GetMapping("/match")
+    @ResponseBody
     public Page<MyTestBean> match(@RequestParam("field") String field){
         return elasticsearchService.findByFirstCode(field);
+    }
+
+    @GetMapping("/match_high_level")
+    @ResponseBody
+    public Page<String> matchHighLevel(@RequestParam("field") String field){
+        return elasticsearchService.findByHighLevelClient(field);
     }
 }

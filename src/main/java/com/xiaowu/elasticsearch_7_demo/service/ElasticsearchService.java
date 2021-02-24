@@ -13,4 +13,8 @@ import org.springframework.data.domain.Page;
 public interface  ElasticsearchService {
 
     Page<MyTestBean> findByFirstCode(String firstCode);
+
+
+    Page<String> findByHighLevelClient(String string);
+
 }
