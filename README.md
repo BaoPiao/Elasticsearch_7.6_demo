@@ -5,6 +5,6 @@
 
 中文社区：https://elasticsearch.cn/
 
-Spring Data Elasticsearch:https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#repositories.query-methods.details
+Spring Data Elasticsearch：https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#repositories.query-methods.details
 
-Spring Data Elasticsearch Git:https://github.com/spring-projects/spring-data-elasticsearch
+Spring Data Elasticsearch Git：https://github.com/spring-projects/spring-data-elasticsearch
