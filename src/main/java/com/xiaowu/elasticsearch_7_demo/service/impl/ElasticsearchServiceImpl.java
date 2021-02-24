@@ -3,7 +3,6 @@ package com.xiaowu.elasticsearch_7_demo.service.impl;
 import com.xiaowu.elasticsearch_7_demo.bean.MyTestBean;
 import com.xiaowu.elasticsearch_7_demo.dao.ElasticMyTestRepository;
 import com.xiaowu.elasticsearch_7_demo.service.ElasticsearchService;
-import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +24,8 @@ public class ElasticsearchServiceImpl implements ElasticsearchService {
     @Override
     public Page<MyTestBean> findByFirstCode(String firstCode) {
         Pageable pageable =  PageRequest.of(0,10);
-        Page<MyTestBean> byFirstCode = elasticMyTestRepository.search( QueryBuilders.matchQuery("field1",firstCode), pageable);
+//        MatchQueryBuilder field1 = QueryBuilders.matchQuery("field1", firstCode);
+        Page<MyTestBean> byFirstCode = elasticMyTestRepository.findByField1(firstCode , pageable);
         return byFirstCode;
     }
 }

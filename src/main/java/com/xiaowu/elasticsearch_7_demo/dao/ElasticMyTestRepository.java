@@ -5,6 +5,9 @@ import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.Repository;
+
 /**
  * @ClassName: ElasticMyTestRepository
  * @Author: guowuwu
@@ -12,13 +15,7 @@ import org.springframework.data.domain.Pageable;
  * @Date: 2021/2/23 16:00
  * @Version: 1.0
  */
-public interface ElasticMyTestRepository extends  ElasticsearchRepository<MyTestBean, Long> {
+public interface ElasticMyTestRepository extends Repository<MyTestBean, Long> {
 
-    @Query("{\n" +
-            "  \"match\": {\n" +
-            "    \"field1\": \"?\"\n" +
-            "  }\n" +
-            "  }"
-            )
-    Page<MyTestBean> findByFirstCode(String firstCode, Pageable pageable);
+    Page<MyTestBean> findByField1(String field1, Pageable pageable);
 }
