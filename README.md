@@ -5,4 +5,8 @@
 
 中文社区：https://elasticsearch.cn/
 
-Spring Data Elasticsearch:https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#repositories.query-methods.details
+Elasticsearch下载地址：https://www.elastic.co/cn/downloads/past-releases/elasticsearch-7-6-2
+
+Spring Data Elasticsearch：https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#preface
+
+Spring Data Elasticsearch Git：https://github.com/spring-projects/spring-data-elasticsearch
