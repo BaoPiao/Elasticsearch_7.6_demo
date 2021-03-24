@@ -17,5 +17,6 @@ import org.springframework.data.repository.Repository;
  */
 public interface ElasticMyTestRepository extends Repository<MyTestBean, Long> {
 
+    // field1是字段名称
     Page<MyTestBean> findByField1(String field1, Pageable pageable);
 }

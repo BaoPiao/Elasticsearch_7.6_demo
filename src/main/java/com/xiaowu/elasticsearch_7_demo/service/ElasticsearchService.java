@@ -1,7 +1,10 @@
 package com.xiaowu.elasticsearch_7_demo.service;
 
 import com.xiaowu.elasticsearch_7_demo.bean.MyTestBean;
+import org.elasticsearch.common.collect.Tuple;
 import org.springframework.data.domain.Page;
+
+import java.util.ArrayList;
 
 /**
  * @ClassName: ElasticsearchService
@@ -17,4 +20,7 @@ public interface  ElasticsearchService {
 
     Page<String> findByHighLevelClient(String string);
 
+    Boolean insertDataIntoEs(String s);
+
+     ArrayList<Tuple<String, String>> aggQuery();
 }

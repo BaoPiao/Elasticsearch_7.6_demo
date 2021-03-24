@@ -28,13 +28,21 @@ public class ElasticController {
 
     @GetMapping("/match")
     @ResponseBody
-    public Page<MyTestBean> match(@RequestParam("field") String field){
+    public Page<MyTestBean> match(@RequestParam("field") String field) {
         return elasticsearchService.findByFirstCode(field);
     }
 
     @GetMapping("/match_high_level")
     @ResponseBody
-    public Page<String> matchHighLevel(@RequestParam("field") String field){
+    public Page<String> matchHighLevel(@RequestParam("field") String field) {
         return elasticsearchService.findByHighLevelClient(field);
+    }
+
+    //插入数据
+    @GetMapping("/write_high_level")
+    @ResponseBody
+    public void writeHighLevel(@RequestParam("field") String field) throws InterruptedException {
+        log.info("开始写入！");
+        elasticsearchService.insertDataIntoEs(field);
     }
 }
