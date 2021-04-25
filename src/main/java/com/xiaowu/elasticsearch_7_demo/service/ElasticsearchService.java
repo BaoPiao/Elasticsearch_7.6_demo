@@ -20,7 +20,16 @@ public interface  ElasticsearchService {
 
     Page<String> findByHighLevelClient(String string);
 
+    //插入数据
     Boolean insertDataIntoEs(String s);
 
+    //聚集查询
      ArrayList<Tuple<String, String>> aggQuery();
+
+     //判断索引是否存在
+    Boolean judgeIndexExist(String indexName);
+
+
+    //强制合并
+    void schedule();
 }

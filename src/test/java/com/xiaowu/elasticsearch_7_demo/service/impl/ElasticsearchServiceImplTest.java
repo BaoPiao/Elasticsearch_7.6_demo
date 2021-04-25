@@ -30,7 +30,6 @@ public class ElasticsearchServiceImplTest {
     @Autowired
     ElasticsearchService elasticsearchService;
 
-
     @Test
     public void testCreateIndex() {
         elasticsearchService.findByFirstCode("");
@@ -40,6 +39,17 @@ public class ElasticsearchServiceImplTest {
     public void aggQuery() {
         ArrayList<Tuple<String, String>> tuples = elasticsearchService.aggQuery();
         System.out.println(tuples.toString());
+
+    }
+
+    @Test
+    public void judgeIndexExist() {
+        System.out.println(elasticsearchService.judgeIndexExist("my-test1"));
+    }
+
+    @Test
+    public void schedule() {
+        elasticsearchService.schedule();
 
     }
 }
